@@ -23,11 +23,6 @@
                         color: #ff5c26;
                 }
 
-                /* Bored Panda Signature Orange */
-                .bp-bg-orange {
-                        background-color: #ff5c26;
-                }
-
                 .card {
                         transition: all 0.3s ease;
                         border: 1px solid #333;
@@ -61,7 +56,6 @@
                                         class="hidden md:block text-zinc-500 text-sm font-semibold border-l border-zinc-700 pl-3 ml-3">Automation
                                         Assessment</span>
                         </div>
-
                         <a href="https://rexcelsp.github.io/resume/" target="_blank"
                                 class="group flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all border border-zinc-700 hover:border-orange-500">
                                 <span>View My Profile</span>
@@ -88,23 +82,57 @@
                 </p>
         </div>
 
-        <div class="max-w-6xl mx-auto px-6 mb-20">
+        <div class="max-w-6xl mx-auto px-6 mb-16">
                 <div class="bg-zinc-900 rounded-2xl p-2 border border-zinc-700 shadow-2xl relative">
                         <div
                                 class="absolute -top-4 -left-4 bg-orange-500 text-white font-bold px-4 py-1 rounded shadow-lg transform rotate-2 z-10 text-sm">
                                 TASK 01: ARCHITECTURE MAP
                         </div>
+
                         <div
-                                class="bg-zinc-800 rounded-xl overflow-hidden relative h-[650px] border border-zinc-700 w-full">
-                                <iframe frameborder="0" style="width:100%;height:100%;"
-                                        src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=ff5c26&edit=_blank&layers=1&nav=1&title=BoredPanda_Automation_Flow&url=https%3A%2F%2Fraw.githubusercontent.com%2FReXcelSp%2Fresume%2Fdb28b73759da80a9dc74a516ae8cec7bbc1db585%2FPandadoc%2520assessment.drawio">
+                                class="bg-zinc-800 rounded-xl overflow-hidden relative h-[750px] border border-zinc-700 w-full">
+                                <iframe frameborder="0" style="width:100%; height:100%; background-color: #ffffff;"
+                                        src="diagram.html">
                                 </iframe>
                         </div>
+
                         <div class="p-4 flex justify-between items-center text-zinc-500 text-xs">
                                 <p>Interactive Diagram: Use scroll to zoom, click and drag to move.</p>
                                 <div class="flex items-center gap-2">
                                         <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                        Live from GitHub
+                                        Live Render
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 mb-16">
+                <div class="bg-zinc-900/50 border-l-4 border-orange-500 p-6 rounded-r-xl">
+                        <h3 class="text-lg font-bold text-white mb-4">Strategic Assumptions & Constraints</h3>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm text-zinc-400">
+                                <div>
+                                        <strong class="text-white block mb-1">1. Definition of "Viral"</strong>
+                                        <p>I assumed "Viral" = <em>Velocity</em> (Interactions per minute), not just
+                                                total volume. A post with 500 upvotes in 30 mins is more valuable to an
+                                                editor than an old post with 10k upvotes.</p>
+                                </div>
+                                <div>
+                                        <strong class="text-white block mb-1">2. The "Busy Editor" Constraint</strong>
+                                        <p>Editors ignore complex dashboards. I assumed the delivery mechanism
+                                                <em>must</em> live where they work (Slack/Teams) with zero-friction
+                                                buttons, rather than a separate login.</p>
+                                </div>
+                                <div>
+                                        <strong class="text-white block mb-1">3. Build vs. Buy</strong>
+                                        <p>I chose <strong>n8n</strong> over a custom Python script to allow for rapid
+                                                iteration and visual debugging by non-engineers, ensuring the tool is
+                                                maintainable by the team.</p>
+                                </div>
+                                <div>
+                                        <strong class="text-white block mb-1">4. Cost Efficiency</strong>
+                                        <p>I selected <strong>GPT-4o-mini</strong>. It provides sufficient reasoning
+                                                capabilities for summarization at a fraction of the cost of the full
+                                                model, vital for high-frequency scraping.</p>
                                 </div>
                         </div>
                 </div>
@@ -124,15 +152,14 @@
                                         🏗️</div>
                                 <h3 class="text-xl font-bold text-white mb-3">System Architecture: First Principles</h3>
                                 <p class="text-zinc-400 leading-relaxed mb-4">
-                                        To satisfy a "busy editorial team," reliability is key. I chose
-                                        <strong>n8n</strong> as the orchestrator because of its visual debugging and
-                                        native support for complex JSON transformation.
+                                        Reliability is key. I designed a modular architecture that decouples ingestion
+                                        from processing using n8n.
                                 </p>
                                 <div class="grid md:grid-cols-3 gap-4 mt-6">
                                         <div class="bg-zinc-900 p-4 rounded border border-zinc-700">
                                                 <strong class="text-white block mb-1">Ingestion</strong>
                                                 <span class="text-xs text-zinc-400">Reddit API (Subreddit Filtered).
-                                                        Detects "Velocity" before news sites do.</span>
+                                                        Detects "Velocity" signals early.</span>
                                         </div>
                                         <div class="bg-zinc-900 p-4 rounded border border-zinc-700">
                                                 <strong class="text-white block mb-1">Database</strong>
@@ -141,8 +168,8 @@
                                         </div>
                                         <div class="bg-zinc-900 p-4 rounded border border-zinc-700">
                                                 <strong class="text-white block mb-1">Orchestration</strong>
-                                                <span class="text-xs text-zinc-400">n8n (Self-Hosted). Enterprise
-                                                        workflow management.</span>
+                                                <span class="text-xs text-zinc-400">n8n (Self-Hosted). Visual workflow
+                                                        management.</span>
                                         </div>
                                 </div>
                         </div>
